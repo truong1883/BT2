@@ -62,7 +62,16 @@ namespace BT2
                 kq += $"<li>Hình: <img src='Uploads/{FHinh.FileName}'> <li>";
             }
 
-            kq += $"<li>Sở Thích: {chkListSoThich.SelectedItem.Text}</li>";
+            string sothich = "";
+            foreach (ListItem x in chkListSoThich.Items)
+            {
+                if (x.Selected)
+                {
+                    sothich += x.Text + ";";
+
+                }
+            }
+            kq += $"<li>Sở Thích: {sothich}</li>";
 
             kq += "</ul>";
 
